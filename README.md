@@ -12,7 +12,6 @@
 - The decision tree has no assumptions about distribution because of the non-parametric nature of the algorithm
 - Gives feature importance by default. >> feature selection. Feature importance in random forests is the ratio of how many times the feature was used in all trees that were created vs. number of trees in the forest.
 
-If we a specific feature is used 50 times and our random forest has 100 trees feature importance is going to be 0.5 .
 ### Cons
 - Sensitive to noisy data. It can overfit noisy data.pruning techniques (e.g., minimum number of samples required at a leaf node, maximum depth of tree) is needed to avoid the problem
 - The small variation(or variance) in data can result in the different decision tree. This can be reduced by bagging and boosting algorithms.
