@@ -1,9 +1,28 @@
 # ML-practice
+# Main kinds of learning problems
+- Classification problem: predicting among two or more discrete classes
+- Regression problem: predicting a continuous value
+
+# Data spliting
+- Training error (Error on the training data) & Generalization error (Error on the entire distribution  of data) >> data spliting is a way to approximate generalization error
+- Train data: used for train model
+- Validation data: hyperparameter tuning and model assessment
+- Test data: use it once to evaluate the performance of the best performing model
+- "Deployment" data: if our model does well on the validation and test data, we hope it will do well on deployment data.
+
+# Cross-validation (using cross_val_score & cross_validate)
+- It creates cv folds on the data.
+- In each fold, it fits the model on the training portion and scores on the validation portion.
+- The output is a list of validation scores in each fold.
+
+# Underfitting, overfitting
+- Underfitting: The model is so simple that it doesn't even capture the patterns in the training data
+- Overfitting: 
+
 # Decision Tree
 - Gini is intended for continuous attributes, Entropy is for attributes that occur in classes
 - Gini is to minimize misclassification
 - Entropy is for exploratory analysis, slower to compute
-
 ### Pros
 - Decision trees are easy to interpret and visualize.
 - It can easily capture Non-linear patterns.
@@ -11,7 +30,6 @@
 - It can be used for feature engineering such as predicting missing values, suitable for variable selection.
 - The decision tree has no assumptions about distribution because of the non-parametric nature of the algorithm
 - Gives feature importance by default. >> feature selection. Feature importance in random forests is the ratio of how many times the feature was used in all trees that were created vs. number of trees in the forest.
-
 ### Cons
 - Sensitive to noisy data. It can overfit noisy data.pruning techniques (e.g., minimum number of samples required at a leaf node, maximum depth of tree) is needed to avoid the problem
 - The small variation(or variance) in data can result in the different decision tree. This can be reduced by bagging and boosting algorithms.
@@ -21,7 +39,7 @@
 
 # Random Forest 
 - algorithm randomly selects a bootstrap sample to train on and a random sample of features to use at each split >> a more diverse set of trees, lessen tree correlation beyond bagged trees, increase predictive power.
-### Parameters
+### HyperParameters
 **Features to improve the predictive power of the model**
 - n_estimators : number of trees >> Higher number of trees give you better performance but makes your code slower ***(start with at least 10 times the number of features)***
 - max_features: ***(Typical approach: p/3 for regression and square of p for classification)***
