@@ -25,11 +25,17 @@
 **Features to improve the predictive power of the model**
 - n_estimators : number of trees >> Higher number of trees give you better performance but makes your code slower ***(start with at least 10 times the number of features)***
 - max_features: ***(Typical approach: p/3 for regression and square of p for classification)***
-- *Auto/None : take all the features*
-- *sqrt : This option will take square root of the total number of features. ex 100 features >> take 10 of them in individual tree 
-- *0.2 : This option allows the random forest to take 20% of variables in individual run >> Increasing max_features > improves the performance but also this decreases the diversity of individual tree*
 - Tree complexity ( node size, max depth, required node for split): ***Node size | min_sample_leaf: 1 for classification and 5 for regression. If data is noisy and higher number of feature in each tree >> increase node size (decreasing tree depth and complexity) will improve performance***
 
 **attributes which have a direct impact on model training speed**
 - n_jobs : -1 >> faster
 - oob_score: random forest cross validation method
+
+# Regularize Regression: to prevents the model from overfitting by adding extra information to it
+- Use when there is a larger number of features
+- Multicollinearity in the data
+### Ridge Regression (L2 regularization): 
+- It shrinks the parameters (reduce the coefficient of inputs))  >> mostly used to prevent multicollinearity, never sets the value of coefficients to absolute zero
+- a ridge model is good if you believe there is a need to retain all features
+### Lasso Regression (L1 regularization)
+- Generally used when we have more number of features, because it automatically does feature selection. Lasso regression tends to make coefficients to absolute zero (when two strongly correlated features are pushed towards zero, one may be pushed fully to zero while the other remains in the model)
