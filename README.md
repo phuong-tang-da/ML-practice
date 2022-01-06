@@ -17,7 +17,7 @@
 
 # Underfitting, overfitting
 - Underfitting: The model is so simple that it doesn't even capture the patterns in the training data
-- Overfitting: 
+- Overfitting: Complex model, high variance, low bias >> Method to reduce overfit: Cross-validation,  train with more data, feature selection, regularization, ensembling (combining prediction from multiple model)
 
 # Decision Tree
 - Gini is intended for continuous attributes, Entropy is for attributes that occur in classes
