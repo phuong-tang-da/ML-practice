@@ -19,6 +19,27 @@
 - Underfitting: The model is so simple that it doesn't even capture the patterns in the training data
 - Overfitting: Complex model, high variance, low bias >> Method to reduce overfit: Cross-validation,  train with more data, feature selection, regularization, ensembling (combining prediction from multiple model)
 
+# Ensemble methods: improve performance by combining several of models 
+### Bagging (“bootstrap aggregating”)- reduce variance: 
+Bootstrapping: generating bootstrap samples from an initial dataset by randomly drawing with replacement. >> Fit several independent models on bootstrap sample and “average” their predictions in order to obtain a model with a lower variance. Ex: random forest (start with deep tree)
+### Boosting- reduce bias: model is trained sequentially >> each model in the sequence is fitted giving more importance to observations in the dataset that were badly handled by the previous models in the sequence. Ex: adaboost and gradient boosting
+-	AdaBoost (Adaptive Boosting): predicting original data set and gives equal weight to each observation > finding those examples in the training dataset that were misclassified, and adding more weight to those examples in the next iteration >> continue until a limit is reached 
+-	Gradient Boosting: Each new model gradually minimizes the loss function  of the whole system using Gradient Descent method
+-	Extreme Gradient Boosting (XGBoost): Only deal with numeric features (encoding needed for categorical features), XGBoost is capable of handling missing values internally
+-	Cat Boost
+-	LightGBM
+### Stacking-different learning algorithms are combined: different weak learners are fitted independently from each others and a meta-model is trained on top of that to predict outputs based on the outputs returned by the base models
+
+# Regularize Regression: to prevents the model from overfitting by adding extra information to it
+- Use when there is a larger number of features
+- Multicollinearity in the data
+### Ridge Regression (L2 regularization): 
+- It shrinks the parameters (reduce the coefficient of inputs))  >> mostly used to prevent multicollinearity, never sets the value of coefficients to absolute zero
+- a ridge model is good if you believe there is a need to retain all features
+### Lasso Regression (L1 regularization)
+- Generally used when we have more number of features, because it automatically does feature selection. Lasso regression tends to make coefficients to absolute zero (when two strongly correlated features are pushed towards zero, one may be pushed fully to zero while the other remains in the model)
+
+--------------------------------------------------------------------------------------------------
 # Decision Tree
 - Gini is intended for continuous attributes, Entropy is for attributes that occur in classes
 - Gini is to minimize misclassification
@@ -49,11 +70,10 @@
 - n_jobs : -1 >> faster
 - oob_score: random forest cross validation method
 
-# Regularize Regression: to prevents the model from overfitting by adding extra information to it
-- Use when there is a larger number of features
-- Multicollinearity in the data
-### Ridge Regression (L2 regularization): 
-- It shrinks the parameters (reduce the coefficient of inputs))  >> mostly used to prevent multicollinearity, never sets the value of coefficients to absolute zero
-- a ridge model is good if you believe there is a need to retain all features
-### Lasso Regression (L1 regularization)
-- Generally used when we have more number of features, because it automatically does feature selection. Lasso regression tends to make coefficients to absolute zero (when two strongly correlated features are pushed towards zero, one may be pushed fully to zero while the other remains in the model)
+# ADABoost (Adaptive Boosting)
+- predicting original data set and gives equal weight to each observation > finding those examples in the training dataset that were misclassified, and adding more weight to those examples in the next iteration >> continue until a limit is reached 
+### HyperParameters
+- Number of Trees (n_estimators): high number of tree >> overfitting 
+- Learning rate
+- Weak learner
+
