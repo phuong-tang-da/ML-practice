@@ -77,3 +77,17 @@ Bootstrapping: generating bootstrap samples from an initial dataset by randomly 
 - Learning rate
 - Weak learner
 
+# XGBoost
+###Common hyperparameter
+- booster: gbtree (default),gblinear or dart
+- learning_rate: step size shrinkage used to prevent overfitting. Range is [0,1].alues range from 0–1 with typical values between 0.001–0.3
+- max_depth: Controls the depth of the individual trees. Typical values range from a depth of 3–8 but it is not uncommon to see a tree depth of 1 
+- subsample: percentage of samples used per tree. Low value can lead to underfitting
+- colsample_bytree: percentage of features used per tree. High value can lead to overfitting.
+- n_estimators: number of trees you want to build. GBMs often require many trees (it is not uncommon to have many thousands of trees) but since they can easily overfit
+- objective: determines the loss function to be used like
+
+### regularization parameters to penalize models as they become more complex and reduce them to simple (parsimonious) model
+- gamma: controls whether a given node will split based on the expected reduction in loss after the split. A higher value leads to fewer splits. Supported only for tree-based learners.
+- alpha: L1 regularization on leaf weights. A large value leads to more regularization.
+- gambda: L2 regularization on leaf weights and is smoother than L1 regularization.
