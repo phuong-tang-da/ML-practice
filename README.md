@@ -92,6 +92,6 @@ Bootstrapping: generating bootstrap samples from an initial dataset by randomly 
 - alpha: L1 regularization on leaf weights. A large value leads to more regularization.
 - gambda: L2 regularization on leaf weights and is smoother than L1 regularization.
 
-#Save and Load Machine Learning Models in Python with scikit-learn
+# Save and Load Machine Learning Models in Python with scikit-learn
 - https://machinelearningmastery.com/save-load-machine-learning-models-python-scikit-learn/
 
