@@ -93,8 +93,5 @@ Bootstrapping: generating bootstrap samples from an initial dataset by randomly 
 - gambda: L2 regularization on leaf weights and is smoother than L1 regularization.
 
 #Save and Load Machine Learning Models in Python with scikit-learn
-https://machinelearningmastery.com/save-load-machine-learning-models-python-scikit-learn/
-filename = 'finalized_model.sav'
-pickle.dump(model, open(filename, 'wb'))
-loaded_model = pickle.load(open(filename, 'rb'))
-result = loaded_model.score(X_test, Y_test)
+- https://machinelearningmastery.com/save-load-machine-learning-models-python-scikit-learn/
+
