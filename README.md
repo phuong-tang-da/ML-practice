@@ -91,3 +91,10 @@ Bootstrapping: generating bootstrap samples from an initial dataset by randomly 
 - gamma: controls whether a given node will split based on the expected reduction in loss after the split. A higher value leads to fewer splits. Supported only for tree-based learners.
 - alpha: L1 regularization on leaf weights. A large value leads to more regularization.
 - gambda: L2 regularization on leaf weights and is smoother than L1 regularization.
+
+#Save and Load Machine Learning Models in Python with scikit-learn
+https://machinelearningmastery.com/save-load-machine-learning-models-python-scikit-learn/
+filename = 'finalized_model.sav'
+pickle.dump(model, open(filename, 'wb'))
+loaded_model = pickle.load(open(filename, 'rb'))
+result = loaded_model.score(X_test, Y_test)
