@@ -129,11 +129,11 @@ Bootstrapping: generating bootstrap samples from an initial dataset by randomly 
 ### Tuning Hyperparameters
 - Kernel: transform the given dataset input data into the required form: linear, polynomial, and radial basis function (RBF)
 - c Regularization: C parameter adds a penalty for each misclassified data point to control the trade-off between decision boundary and misclassification term
--- small c -> low penalty -> a large margin (high misclassifications)
--- large c -> high pernalty -> small margin (overfitting)
++ small c -> low penalty -> a large margin (high misclassifications)
++ large c -> high pernalty -> small margin (overfitting)
 - Gamma (RBF kernel): controls the distance of influence of a single training point 
--- low gamma -> large radius -> all points are group together
--- high gamma -> small radius ->point need to be very close (overfit(
++ low gamma -> large radius -> all points are group together
++ high gamma -> small radius ->point need to be very close (overfit(
 ### Pros:
 - effective in high dimensional spaces
 - effective in cases where the number of dimensions is greater than the number of samples.
