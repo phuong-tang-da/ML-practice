@@ -58,6 +58,7 @@ Bootstrapping: generating bootstrap samples from an initial dataset by randomly 
 - They suffer from an inherent instability, since due to their hierarchical nature, the effect of an error in the top splits propagate down to all of the splits below.
 - Is a "greedy" algorithm. Each node is only locally optimal which cannot gaurantee globally optimal tree
 
+--------------------------------------------------------------------------------------------------
 # Random Forest 
 - algorithm randomly selects a bootstrap sample to train on and a random sample of features to use at each split >> a more diverse set of trees, lessen tree correlation beyond bagged trees, increase predictive power.
 ### HyperParameters
@@ -70,6 +71,7 @@ Bootstrapping: generating bootstrap samples from an initial dataset by randomly 
 - n_jobs : -1 >> faster
 - oob_score: random forest cross validation method
 
+--------------------------------------------------------------------------------------------------
 # ADABoost (Adaptive Boosting)
 - predicting original data set and gives equal weight to each observation > finding those examples in the training dataset that were misclassified, and adding more weight to those examples in the next iteration >> continue until a limit is reached 
 ### HyperParameters
@@ -77,6 +79,7 @@ Bootstrapping: generating bootstrap samples from an initial dataset by randomly 
 - Learning rate
 - Weak learner
 
+--------------------------------------------------------------------------------------------------
 # XGBoost
 ###Common hyperparameter
 - booster: gbtree (default),gblinear or dart
@@ -91,7 +94,27 @@ Bootstrapping: generating bootstrap samples from an initial dataset by randomly 
 - gamma: controls whether a given node will split based on the expected reduction in loss after the split. A higher value leads to fewer splits. Supported only for tree-based learners.
 - alpha: L1 regularization on leaf weights. A large value leads to more regularization.
 - gambda: L2 regularization on leaf weights and is smoother than L1 regularization.
-
+--------------------------------------------------------------------------------------------------
 # Save and Load Machine Learning Models in Python with scikit-learn
 - https://machinelearningmastery.com/save-load-machine-learning-models-python-scikit-learn/
 
+--------------------------------------------------------------------------------------------------
+# Naive Bayes Classifiers
+- a collection of classification algorithms
+- Assumption: each feature makes an independent & equal contribution to the outcome
+- P(A|B)= P(B|A) * P(A) / P(B) : B is evidence, A in priori, A|B is posteriori of B
+- P(y|X) = P(Yyes) * P(x1|Yyes)* P(x..|Yyes) * P (xn|Yyes) + P(Yno) * P(x1|Yno)* P(x..|Yno) * P (xn|Yno)
+### Popular Naive Bayes classifiers: 
+- Gaussian Naive Bayes: for continuous features, normal distribution assumed
+- Multinomial Naive Bayes: frequency features (document classification)
+- Bernoulli Naive Bayes: features are independent binary (0,1) (document classification, text classification with ‘bag of words’ model)
+### Pros:
+- easy & fast
+- well perform for categorical input variables
+### Cons:
+- probability outputs from predict_proba are not to be taken too seriously
+- impossible assumption
+### Application:
+- Real time 
+- Multiclass prediction
+- Text classification: Spam, Sentiment Analysis
