@@ -105,7 +105,7 @@ Bootstrapping: generating bootstrap samples from an initial dataset by randomly 
 - P(A|B)= P(B|A) * P(A) / P(B) : B is evidence, A in priori, A|B is posteriori of B
 - P(y|X) = P(Yyes) * P(x1|Yyes)* P(x..|Yyes) * P (xn|Yyes) + P(Yno) * P(x1|Yno)* P(x..|Yno) * P (xn|Yno)
 ### Popular Naive Bayes classifiers: 
-- Gaussian Naive Bayes: for continuous features, normal distribution assumed
+- Gaussian Naive Bayes: supports continuous values and has an assumption that each class is normally distributed. 
 - Multinomial Naive Bayes: frequency features (document classification)
 - Bernoulli Naive Bayes: features are independent binary (0,1) (document classification, text classification with ‘bag of words’ model)
 ### Pros:
