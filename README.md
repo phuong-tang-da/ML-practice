@@ -118,3 +118,28 @@ Bootstrapping: generating bootstrap samples from an initial dataset by randomly 
 - Real time 
 - Multiclass prediction
 - Text classification: Spam, Sentiment Analysis
+
+--------------------------------------------------------------------------------------------------
+# Support Vector Machines 
+- widely used in classification objectives
+- Suitable for small, medium but comlicated dataset
+- SVM finds an optimal hyperplane (decision plane) in n-dimensional space (n- number of features) to separate new data points -> Optimal mean: maximizing the distances between nearest data point (either class) and hyper-plane 
+- A margin is a gap between the two lines on the closest class points
+- for non-linear and inseparable planes, SVM uses a kernel trick to transform the input space to a higher dimensional space
+### Tuning Hyperparameters
+- Kernel: transform the given dataset input data into the required form: linear, polynomial, and radial basis function (RBF)
+- c Regularization: C parameter adds a penalty for each misclassified data point to control the trade-off between decision boundary and misclassification term
+-- small c -> low penalty -> a large margin (high misclassifications)
+-- large c -> high pernalty -> small margin (overfitting)
+- Gamma (RBF kernel): controls the distance of influence of a single training point 
+-- low gamma -> large radius -> all points are group together
+-- high gamma -> small radius ->point need to be very close (overfit(
+### Pros:
+- effective in high dimensional spaces
+- effective in cases where the number of dimensions is greater than the number of samples.
+- uses a subset of training points in the decision function -> memory efficient
+- robust to outliers
+### Cons:
+- doesn’t perform well when we have large data set
+- doesn’t perform very well, when the data set has more noise
+- doesn’t directly provide probability estimates
