@@ -143,3 +143,8 @@ Bootstrapping: generating bootstrap samples from an initial dataset by randomly 
 - doesn’t perform well when we have large data set
 - doesn’t perform very well, when the data set has more noise
 - doesn’t directly provide probability estimates
+----------------------------------------
+# K-means vs Hierarchical Clustering
+- Hierarchical clustering can't handle large volumes of data
+- K-means, the random initialization of clusters makes the results of the clustering algorithm different each time you run the algorithm. On the contrary, the results of hierarchical clustering are reproducible
+- the number of clusters must be determined by the user based on their knowledge of the data, compared to hierarchical clustering where number of clusters can be determined by observing the dendrogram.
